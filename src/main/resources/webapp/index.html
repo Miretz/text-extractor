@@ -1,13 +1,49 @@
 <html>
+<style>
+body {
+    margin: 0px;
+}
+form {
+    border: 1px solid #ddd;
+    background-color: #eee;
+    width: 300px;
+}
+#header {
+    background-color: #333;
+    color: #eee;
+    padding-left: 4px;
+}
+#content {
+    padding-left: 40px;
+    margin: 0 auto;
+}
+
+</style>
 <body>
-<h1>Text Extractor</h1>
+<div id="header">
+    <h1>Text Extractor</h1>
+</div>
+<div id="content">
 
-<form action="/api/extractor" method="post" enctype="multipart/form-data">
+    <h2>Extracts plain text, language and metadata (JSON response)</h2>
+    <i>/api/extractor</i>
+    <form action="/api/extractor" method="post" enctype="multipart/form-data">
 
-    <p>Select a file : <input type="file" name="file" size="45" /></p>
-    <input type="submit" value="Upload" />
+        <p>Select a file : <input type="file" name="file" size="45"/></p>
+        <input type="submit" value="Upload"/>
 
-</form>
+    </form>
 
+    <br/><br/>
+
+    <h2>Extracts HTML and display (HTML response)</h2>
+    <i>/api/html</i>
+    <form action="/api/html" method="post" enctype="multipart/form-data">
+
+        <p>Select a file : <input type="file" name="file" size="45"/></p>
+        <input type="submit" value="Upload"/>
+
+    </form>
+</div>
 </body>
 </html>
