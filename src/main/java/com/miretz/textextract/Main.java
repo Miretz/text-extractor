@@ -19,6 +19,7 @@ public class Main {
     public static HttpServer startServer() {
         final ResourceConfig rc = new ResourceConfig().packages("com.miretz.textextract");
         rc.register(MultiPartFeature.class);
+        rc.register(JacksonFeature.class);
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
     }
 
